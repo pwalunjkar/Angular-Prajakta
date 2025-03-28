@@ -1,0 +1,84 @@
+<button (click)="backToHome()">Back To Home</button>
+<div class="container">
+    <form class="row">
+        <div class="form-outline mb-4">
+            <label class="form-label">First Name</label>
+            <input class="form-control" [(ngModel)]="firstName" name="firstName" type="text" />
+        </div>
+
+        <div class="form-outline mb-4">
+            <label class="form-label">Middle Name</label>
+            <input class="form-control" [(ngModel)]="middleName" name="middleName" type="text" />
+        </div>
+
+        <div class="form-outline mb-4">
+            <label class="form-label">Last Name</label>
+            <input class="form-control" [(ngModel)]="lastName" name="lastName" type="text" />
+        </div>
+
+        <div class="form-group">
+            <label for="city">City:</label>
+            <select class="form-control" id="city">
+                <option>Pune</option>
+                <option>chennai</option>
+                <option>Ahmedabad</option>
+                <option>Bangalore</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label for="state">State:</label>
+            <select class="form-control" id="state">
+                <option>Maharashtra</option>
+                <option>Tamil Nadu</option>
+                <option>Gujrat</option>
+                <option>Karnataka</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <div class="radio">
+                <label> Gender: <input type="radio" name="optradio" >Male</label>
+            </div>
+            <div class="radio">
+                <label><input type="radio" name="optradio">Female</label>
+            </div>
+            <div class="radio disabled">
+                <label><input type="radio" name="optradio">Other</label>
+            </div>
+        </div>
+          
+        <div class="form-group">
+              <label class="checkbox-inline">
+                <input type="checkbox" value="">I hereby state that all the information noted above is accurate.
+              </label>
+        </div>
+
+        <table>
+            <thead>
+                <tr>
+                <th>
+                        Qualification
+                </th>
+                <th>
+                        Percentage
+                </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>BSC </td>
+                    <td> 80 </td>
+                </tr>
+            </tbody>
+        </table>
+        <div class="form-group">
+            <img src="dog.jpg" class="img-circle" alt="image" width="304" height="236"> 
+        </div>
+
+             <button type="button" class="btn btn-primary  " (click)="save()">Submit</button> 
+      
+    </form>
+</div>
+
+
