@@ -1,24 +1,24 @@
 <button (click)="backToHome()">Back To Home</button>
 <div class="container">
-    <form class="row">
+    <form class="row" [formGroup]="registerForm">
         <div class="form-outline mb-4">
             <label class="form-label">First Name</label>
-            <input class="form-control" [(ngModel)]="firstName" name="firstName" type="text" />
+            <input class="form-control" name="firstName" type="text" formControlName="firstName"/>
         </div>
 
         <div class="form-outline mb-4">
             <label class="form-label">Middle Name</label>
-            <input class="form-control" [(ngModel)]="middleName" name="middleName" type="text" />
+            <input class="form-control" name="middleName" type="text" formControlName="middleName"/>
         </div>
 
         <div class="form-outline mb-4">
             <label class="form-label">Last Name</label>
-            <input class="form-control" [(ngModel)]="lastName" name="lastName" type="text" />
+            <input class="form-control" name="lastName" type="text" formControlName="lastName"/>
         </div>
 
         <div class="form-group">
             <label for="city">City:</label>
-            <select class="form-control" id="city">
+            <select class="form-control" id="city" formControlName="city">
                 <option>Pune</option>
                 <option>chennai</option>
                 <option>Ahmedabad</option>
@@ -28,7 +28,7 @@
 
         <div class="form-group">
             <label for="state">State:</label>
-            <select class="form-control" id="state">
+            <select class="form-control" id="state" formControlName="state">
                 <option>Maharashtra</option>
                 <option>Tamil Nadu</option>
                 <option>Gujrat</option>
@@ -38,19 +38,19 @@
 
         <div class="form-group">
             <div class="radio">
-                <label> Gender: <input type="radio" name="optradio" >Male</label>
+                <label> Gender: <input type="radio" name="gender" formControlName="gender" >Male</label>
             </div>
             <div class="radio">
-                <label><input type="radio" name="optradio">Female</label>
+                <label><input type="radio" name="gender" formControlName="gender">Female</label>
             </div>
             <div class="radio disabled">
-                <label><input type="radio" name="optradio">Other</label>
+                <label><input type="radio" name="gender" formControlName="gender">Other</label>
             </div>
         </div>
           
         <div class="form-group">
               <label class="checkbox-inline">
-                <input type="checkbox" value="">I hereby state that all the information noted above is accurate.
+                <input type="checkbox" value="" formControlName="declaration">I hereby state that all the information noted above is accurate. 
               </label>
         </div>
 
@@ -73,7 +73,7 @@
             </tbody>
         </table>
         <div class="form-group">
-            <img src="dog.jpg" class="img-circle" alt="image" width="304" height="236"> 
+            <img src="dog.jpg" class="img-circle" alt="image" width="304" height="236" > 
         </div>
 
              <button type="button" class="btn btn-primary  " (click)="save()">Submit</button> 

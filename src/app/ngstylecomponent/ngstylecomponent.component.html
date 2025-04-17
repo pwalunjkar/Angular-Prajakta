@@ -1,0 +1,30 @@
+<div class="container">
+    <h2 [ngStyle]="{'font-size.px':30}">Student Details</h2>
+    <h2 id="height" style="font-size: 30 px">Student Details</h2>
+    <table class="table table-sm table-bordered m-t-4">
+      <tr>
+        <th>Name</th>
+        <th>Roll No</th>
+        <th>Mark1</th>
+        <th>Mark2</th>
+        <th>Mark3</th>
+      </tr>
+      <tbody>
+      <tr *ngFor="let student of students">
+        <td>{{student.name}}</td>
+        <td style="color: red">{{student.rollNo}}</td>
+        <td [ngStyle]="{'color':getMarkColor(student.mark1)}">{{student.mark1}}</td>
+  <td [ngStyle]="{'color':getMarkColor(student.mark2)}">{{student.mark2}}</td>
+        <td [ngStyle]="{'color':getMarkColor(student.mark3)}">{{student.mark3}}</td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+  wph-sjzc-vne
+
+
+  <input type="text" [(ngModel)]="name" name="name" [ngClass]="{ 'invalid-input': !name }" placeholder="Enter text here" />
+  <p *ngIf="name==''" class="warning-message">Input cannot be empty!</p>
+ {{name}}
+  
+  
