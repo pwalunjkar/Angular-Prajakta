@@ -1,24 +1,28 @@
 import { Component } from '@angular/core';
-import { FormControl, FormGroup, FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { FormBuilder, FormControl, FormGroup, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { NgstylecomponentComponent } from '../ngstylecomponent/ngstylecomponent.component';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-login',
-  imports: [ReactiveFormsModule,NgstylecomponentComponent],
+  imports: [ReactiveFormsModule,CommonModule],
   templateUrl: './login.component.html',
   styleUrl: './login.component.css'
 })
 export class LoginComponent {
-  constructor (private router: Router){}
-  loginForm = new FormGroup({
-    email: new FormControl(''),
-    password: new FormControl('')
-  })
+formGroup: any;
+  constructor (private router: Router,private fb: FormBuilder){
+    this.formGroup = this.fb.group({
+      email: new FormControl('', Validators.required),
+      password: new FormControl('', Validators.minLength(8))
+    })
+  }
+ 
   submit()
   {
     alert("Login successfull")
-    console.log(this.loginForm);
+    console.log(this.formGroup);
     this.router.navigateByUrl("/dashboard");
   }
 
